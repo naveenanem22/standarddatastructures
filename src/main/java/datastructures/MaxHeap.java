@@ -1,8 +1,13 @@
 package datastructures;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 public class MaxHeap {
     private int[] data;
     private int nextAvailableSpot;
+
+    private static final Logger LOGGER = Logger.getLogger(MaxHeap.class.getName());
 
     MaxHeap(int size) {
         data = new int[size];
@@ -18,6 +23,7 @@ public class MaxHeap {
             upHeapify((i - 1) / 2);
         }
     }
+
     //  Removing test commit
     public void insert(int item) {
         if (nextAvailableSpot == 0) {
@@ -31,7 +37,7 @@ public class MaxHeap {
 
     public void display() {
         for (int i = 0; i <= nextAvailableSpot; i++) {
-            System.out.println(data[i]);
+            LOGGER.log(Level.INFO, "Data Item: {0}", data[i]);
         }
     }
 
@@ -67,6 +73,6 @@ public class MaxHeap {
         data[nextAvailableSpot - 1] = 0;
         nextAvailableSpot--;
         downHeapify(0);
-        System.out.println("Extracted max: " + extractedMax);
+        LOGGER.log(Level.INFO, "Extracted max: {0}", extractedMax);
     }
 }

@@ -1,11 +1,14 @@
 package datastructures;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 public class SingleLinkedList {
 
     private Node head;
     private Node tail;
 
-
+private static final Logger LOGGER = Logger.getLogger(SingleLinkedList.class.getName());
 
     public void append(int item){
         //  Create a new node
@@ -41,10 +44,10 @@ public class SingleLinkedList {
 
     public void traverse(){
         if(head == null)
-            System.out.println("Singly Linked list is empty.");
+            LOGGER.info("Singly Linked list is empty.");
         Node pointer = head;
         do{
-            System.out.println(pointer.getItem());
+            LOGGER.log(Level.INFO, "Item: {0}",pointer.getItem());
             pointer = pointer.getNext();
         }while(pointer.getNext() != null);
     }

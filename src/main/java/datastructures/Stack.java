@@ -1,8 +1,12 @@
 package datastructures;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 public class Stack {
     private int[] data = new int[10];
     private int pointer;
+    private static final Logger LOGGER = Logger.getLogger(Stack.class.getName());
 
     public void push(int item){
         data[pointer]=item;
@@ -11,7 +15,7 @@ public class Stack {
 
     public int pop(){
         if(pointer == 0){
-            System.out.println("Stack is empty");
+            LOGGER.info("Stack is empty");
             return 0;
         }
         else {
@@ -24,7 +28,7 @@ public class Stack {
 
     public void display(){
         for(int item : data){
-            System.out.println(item);
+            LOGGER.log(Level.INFO,"Item: {0}",item);
         }
     }
 

@@ -1,6 +1,6 @@
 package datastructures;
 
-import java.util.ArrayList;
+
 import java.util.logging.Logger;
 
 public class Queue {
@@ -24,7 +24,7 @@ public class Queue {
 
     public void dequeue() {
         if (qBack == -1 && qFront == -1) {
-            System.out.println("Queue is empty");
+            LOGGER.info("Queue is empty");
         } else {
             data[qFront] = 0;
             qFront++;
@@ -33,7 +33,7 @@ public class Queue {
 
     public void display() {
         for (int item : data) {
-            System.out.println(item);
+            LOGGER.info(String.valueOf(item));
         }
     }
 }
