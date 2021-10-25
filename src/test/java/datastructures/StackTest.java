@@ -17,8 +17,17 @@ class StackTest {
    @Test
    void popTest(){
       Stack stack = new Stack();
+      assertEquals(0, stack.getPointer());
       stack.push(10);
       assertEquals(10, stack.pop());
+   }
+
+   @Test
+   void displayTest(){
+      Stack stack = new Stack();
+      stack.push(10);
+      stack.push(20);
+      stack.display();
    }
 
 }
