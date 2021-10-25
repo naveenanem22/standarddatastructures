@@ -32,4 +32,11 @@ public class Stack {
         }
     }
 
+    public int[] getData() {
+        return data;
+    }
+
+    public int getPointer() {
+        return pointer;
+    }
 }
