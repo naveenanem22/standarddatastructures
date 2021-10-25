@@ -40,7 +40,4 @@ public class Stack {
         return pointer;
     }
 
-    public void setPointer(int pointer) {
-        this.pointer = pointer;
-    }
 }
