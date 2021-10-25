@@ -30,4 +30,10 @@ class StackTest {
       stack.display();
    }
 
+   @Test
+   void getDataTest(){
+      Stack stack = new Stack();
+      assertEquals(10, stack.getData().length);
+   }
+
 }
