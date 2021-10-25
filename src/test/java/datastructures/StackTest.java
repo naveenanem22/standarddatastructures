@@ -3,6 +3,7 @@ package datastructures;
 
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class StackTest {
 
@@ -17,7 +18,7 @@ class StackTest {
    @Test
    void popTest(){
       Stack stack = new Stack();
-      assertEquals(0, stack.getPointer());
+      assertEquals(0, stack.pop());
       stack.push(10);
       assertEquals(10, stack.pop());
    }
@@ -28,6 +29,7 @@ class StackTest {
       stack.push(10);
       stack.push(20);
       stack.display();
+      assertTrue(true);
    }
 
    @Test

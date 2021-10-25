@@ -39,4 +39,8 @@ public class Stack {
     public int getPointer() {
         return pointer;
     }
+
+    public void setPointer(int pointer) {
+        this.pointer = pointer;
+    }
 }
