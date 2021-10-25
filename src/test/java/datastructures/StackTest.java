@@ -14,4 +14,11 @@ class StackTest {
        assertEquals(2, stack.getPointer());
    }
 
+   @Test
+   void popTest(){
+      Stack stack = new Stack();
+      stack.push(10);
+      assertEquals(10, stack.pop());
+   }
+
 }
