@@ -1,7 +1,12 @@
 package datastructures;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 public class SingleLinkedListDemo {
+    private static final Logger LOGGER = Logger.getLogger(SingleLinkedListDemo.class.getName());
     public static void main(String[] args){
+
         SingleLinkedList sll = new SingleLinkedList();
         sll.append(10);
         sll.append(20);
@@ -13,6 +18,6 @@ public class SingleLinkedListDemo {
         sll.insertAtBeginning(25);
         sll.traverse();
         Node result = sll.search(20);
-        System.out.println("Search Result: "+result != null ? result.getItem(): "Not found");
+        LOGGER.log(Level.INFO,"Result: {0}", result != null ? Integer.toString(result.getItem()) : "Not found");
     }
 }

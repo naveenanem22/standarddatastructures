@@ -1,8 +1,13 @@
 package datastructures;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 public class MinHeap {
     private int[] data;
     private int nextAvailableSpot;
+
+    private static final Logger LOGGER = Logger.getLogger(MinHeap.class.getName());
 
     MinHeap(int size) {
         data = new int[size];
@@ -48,12 +53,13 @@ public class MinHeap {
         data[nextAvailableSpot - 1] = 0;
         nextAvailableSpot--;
         downHeapify(0);
-        System.out.println("Extracted min: " + extractedMin);
+        LOGGER.log(Level.INFO, "Extracted min: {0}", extractedMin);
+
     }
 
     public void display() {
         for (int i = 0; i <= nextAvailableSpot; i++) {
-            System.out.println(data[i]);
+            LOGGER.log(Level.INFO, "Data: {0}", data[i]);
         }
     }
 
