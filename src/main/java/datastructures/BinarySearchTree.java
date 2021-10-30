@@ -3,35 +3,32 @@ package datastructures;
 public class BinarySearchTree {
     private BSTNode root;
 
-    public void insert(int value){
-        if(root == null){
-            root.setValue(value);
-        }
-        else{
+    public void insert(int value) {
+        if (root == null) {
+            root = new BSTNode(null, null, value);
+        } else {
             BSTNode leafNode = getLeafNode(root, value);
-            if(value < leafNode.getValue()){
+            if (value < leafNode.getValue()) {
                 leafNode.getLeft().setValue(value);
             }
 
         }
     }
 
-    public boolean isLeafNode(BSTNode node){
+    public boolean isLeafNode(BSTNode node) {
         return node.getLeft() == null && node.getRight() == null;
     }
 
-    public BSTNode getLeafNode(BSTNode node, int valueToInsert){
-        if(isLeafNode(node)){
+    public BSTNode getLeafNode(BSTNode node, int valueToInsert) {
+        if (isLeafNode(node)) {
             return node;
-        }
-        else{
-            if(valueToInsert < node.getValue()){
+        } else {
+            if (valueToInsert < node.getValue()) {
                 getLeafNode(node.getLeft(), valueToInsert);
             }
         }
         return null;
     }
-
 
 
 }
