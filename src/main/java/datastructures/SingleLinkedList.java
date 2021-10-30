@@ -45,11 +45,14 @@ private static final Logger LOGGER = Logger.getLogger(SingleLinkedList.class.get
     public void traverse(){
         if(head == null)
             LOGGER.info("Singly Linked list is empty.");
-        Node pointer = head;
-        do{
-            LOGGER.log(Level.INFO, "Item: {0}",pointer.getItem());
-            pointer = pointer.getNext();
-        }while(pointer.getNext() != null);
+        else {
+            Node pointer = head;
+            do{
+                LOGGER.log(Level.INFO, "Item: {0}",pointer.getItem());
+                pointer = pointer.getNext();
+            }while(pointer.getNext() != null);
+        }
+
     }
 
 
