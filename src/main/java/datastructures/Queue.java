@@ -1,6 +1,7 @@
 package datastructures;
 
 
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class Queue {
@@ -33,7 +34,7 @@ public class Queue {
 
     public void display() {
         for (int item : data) {
-            LOGGER.info(String.valueOf(item));
+            LOGGER.log(Level.INFO,"{0}",item);
         }
     }
 }
